@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} 
+Eisaal Products
+{% endblock %} 
+
+{% block content %}
+<!-- Products Section -->
+<div id="products" class="container py-5 text-center">
+    <h2 class="text-center mb-5">Products</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for i in allProducts %}
+      <!-- Product 1 -->
+      <div class="col">
+        <div class="card product-card">
+          <img
+            src='{{i.Product_Img}}'
+            class="card-img-top"
+            alt="Product 1"
+          height="400px"/>
+          <div class="card-body text-center">
+            <h5 class="card-title">{{i.Product_Name}}</h5>
+            <p class="card-text">{{i.Product_Dec|slice:"0:53"}}...</p>
+            <p class="card-text">₹{{i.Product_Price}}</p>
+            <a href="get_products/{{i.Sno}}" class="btn btn-outline-dark">View Details</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

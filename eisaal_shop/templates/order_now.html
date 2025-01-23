@@ -1,0 +1,72 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} Order Now! {% endblock %} 
+{% block content %}
+
+<div class="text-center">
+    <form method="post" action="{% url 'verify_payment' %}" id="payment-form">
+        {% csrf_token %}
+        <div class="container my-4">
+            Total Price Rs.{{ total_amount }}
+        </div>
+        <!-- Hidden Fields for Payment Integration -->
+        <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+        <input type="hidden" name="razorpay_order_id" id="razorpay_order_id">
+        <input type="hidden" name="razorpay_signature" id="razorpay_signature">
+        <input type="hidden" name="name" id="name" value="{{name}}">
+        <input type="hidden" name="email" id="email" value="{{email}}">
+        <input type="hidden" name="phone" id="phone" value="{{phone}}">
+        <input type="hidden" name="address" id="address" value="{{address}}">
+        <input type="hidden" name="product_name" id="product_name" value="{{product_name}}">
+        <input type="hidden" name="qut" id="qut" value="{{qut}}">
+        <input type="hidden" name="total_amount" id="amount" value="{{total_amount}}">
+
+        <button
+            type="button"
+            class="btn btn-outline-success mb-4"
+            id="rzp-button1"
+        >
+            Pay Now
+        </button>
+    </form>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+    var options = {
+        "key":"rzp_live_P0apfWTBeg4FIX", // Enter the Key ID generated from the Dashboard
+        "amount": "{{ amount }}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": "INR",
+        "name": "Eisaal Shop",
+        "description": "Test Transaction",
+        "order_id": "{{razorpay_order_id}}", // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "handler": function (response) {
+            // Populate hidden fields with Razorpay response data
+            document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
+            document.getElementById('razorpay_order_id').value = response.razorpay_order_id;
+            document.getElementById('razorpay_signature').value = response.razorpay_signature;
+
+            // Submit the form after successful payment
+            document.getElementById('payment-form').submit();
+        },
+        "theme": {
+            "color": "#3399cc"
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.on('payment.failed', function (response) {
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+    });
+    document.getElementById('rzp-button1').onclick = function (e) {
+        rzp1.open();
+        e.preventDefault();
+    };
+</script>
+{% endblock %}

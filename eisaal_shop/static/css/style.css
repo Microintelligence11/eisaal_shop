@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.hero-section img {
+    width: 100%;
+    height: auto;
+}
+
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}

@@ -1,0 +1,143 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} Order Now! {% endblock %} 
+{% block content %}
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">Order :- {{getOderDetails.Product_Name}}</h2>
+  <form method="post" action="{% url 'order_now' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fullName"
+        placeholder="Enter your full name"
+        required
+        name="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your email"
+        required
+        name="email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        placeholder="Enter your phone number"
+        required
+        name="phone"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="address">Shipping Address</label>
+      <textarea
+        class="form-control"
+        id="address"
+        rows="3"
+        placeholder="Enter your shipping address"
+        required
+        name="address"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Product Name</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        placeholder="{{getOderDetails.Product_Name}}"
+        required
+        value="{{getOderDetails.Product_Name}}"
+        readonly
+        name="product_name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input
+        type="number"
+        class="form-control"
+        id="qut"
+        placeholder="Enter quantity"
+        required
+        value="0"
+        name="qut"
+        oninput="totaolAmount()"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        required
+        value="{{getOderDetails.Product_Price}}"
+        readonly
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Total Price</label>
+      <input
+        type="number"
+        class="form-control"
+        id="total_price"
+        required
+        value="0"
+        name="total_price"
+        readonly
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="paymentMethod">Payment Method</label>
+      <select class="form-control" id="paymentMethod" required aria-readonly="true" name="options">
+        <option>Online Payment</option>
+        <option>Cash on Delivery</option>
+      </select>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-outline-dark btn-block"
+    >
+      Place Order
+    </button>
+  </form>
+</div>
+
+<script>
+  // total price calculation function
+  function totaolAmount() {
+    const price = document.getElementById("price").value;
+    const qut = document.getElementById("qut").value;
+
+    const total = price * qut;
+    document.getElementById("total_price").value = total.toFixed(2);
+  }
+
+  
+</script>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.banner {
+    background-image: url('path/to/your/banner/image.jpg'); /* Replace with your banner image path */
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 150px 0;
+}
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.product-image {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} Contact Us |
+Eisaal Shop 
+{% endblock %} 
+{% block content %}
+
+<div class="container my-4">
+  <h3>Contact Now</h3>
+  <hr />
+  <form action="contact" method="post">
+    {% csrf_token %}
+  <div class="mb-3 my-4">
+    <label for="name" class="form-label my-3">Full Name</label>
+    <input type="text" class="form-control" id="name" placeholder="enter your full name here" name="name"/>
+
+    <label for="email" class="form-label my-3">Email</label>
+    <input type="email" class="form-control" id="email" placeholder="enter your email here" name="email"/>
+
+    <label for="phone" class="form-label my-3">Phone No.</label>
+    <input type="text" class="form-control" id="phone" placeholder="enter your phone no. here" name="phone"/>
+
+    <label for="issue" class="form-label my-3">Issue</label>
+    <textarea class="form-control" id="issue" rows="7" placeholder="Write your issue here!" name="issue"></textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-dark">submit</button>
+</form>
+</div>
+
+{% endblock %}
