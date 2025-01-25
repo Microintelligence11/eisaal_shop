@@ -138,12 +138,15 @@ def contact(request):
             messages.success(request, "Your issue has been submitted successfully, we will be reach you shortly.")
             return redirect("contact")
     return render(request, "contact.html")
-            
-
-
-        
-        
         
     return render(request, 'contact.html')
 
 
+def about(request):
+    return render(request, 'about.html')
+
+def terms_and_conditions(request):
+    return render(request, 'terms_and_conditions.html')
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')

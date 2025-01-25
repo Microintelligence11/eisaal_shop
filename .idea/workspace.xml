@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5375dea1-6c70-44aa-829f-525c5b162f2c" name="Changes" comment="" />
+    <list default="true" id="5375dea1-6c70-44aa-829f-525c5b162f2c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eisaal_shop/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/eisaal_shop/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eisaal_shop/eisaalShop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/eisaal_shop/eisaalShop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eisaal_shop/eisaalShop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/eisaal_shop/eisaalShop/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eisaal_shop/eisaal_shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/eisaal_shop/eisaal_shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eisaal_shop/eisaal_shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/eisaal_shop/eisaal_shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eisaal_shop/staticfiles_build/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/eisaal_shop/staticfiles_build/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eisaal_shop/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/eisaal_shop/templates/base.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,14 +38,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

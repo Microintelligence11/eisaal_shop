@@ -21,10 +21,13 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index' ),
     path('shop', views.shop, name='shop' ),
+    path('about', views.about, name='about' ),
     path('get_products/<int:Sno>', views.get_products, name='get_products' ),
     path('contact', views.contact, name='contact' ),
     path('<int:Sno>/order', views.order, name='order'),
     path('order_now/', views.order_now, name='order_now'),
     path('verify_payment/', views.verify_payment, name='verify_payment'),
+    path('terms_and_conditions', views.terms_and_conditions, name='terms_and_conditions'),
+    path('privacy_policy', views.privacy_policy, name='privacy_policy'),
 
 ]
