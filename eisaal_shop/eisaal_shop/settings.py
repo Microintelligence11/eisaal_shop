@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ["192.46.210.170","www.shiafiqh.com","shiafiqh.com", "127.0.0.1:
 
 INSTALLED_APPS = [
     'eisaalShop',
+    'django_cleanup.apps.CleanupConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -139,10 +140,10 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-#     'static',
-# ]
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static",
+#    'static',
+#]
 
 
 

@@ -5,12 +5,16 @@ from django.db import models
 
 
 class addShopProducts(models.Model):
-    Sno = models.IntegerField(primary_key=True, default=0, unique=True)
+    Sno = models.IntegerField(primary_key=True, default=0, unique=True,)
     Product_Name = models.CharField(max_length=50, default="")
     Product_Dec = models.CharField(max_length=1000, default="")
     Product_Price = models.IntegerField(default=0)
-    Product_Img = models.ImageField(upload_to='static/productImg')
-
+    Product_Img_One = models.FileField(upload_to='static/productImg', default= '')
+    Product_Img_Two = models.FileField(upload_to='static/productImg',default= '', blank=True)
+    Product_Img_Three = models.FileField(upload_to='static/productImg', default= '', blank=True)
+    Product_Img_Four = models.FileField(upload_to='static/productImg', default= '', blank=True)
+    Product_Img_Five = models.FileField(upload_to='static/productImg', default= '', blank=True)
+    Product_Img_Six = models.FileField(upload_to='static/productImg', default= '', blank=True)
 
 
 class Orders(models.Model):
